@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background: black;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    margin: 20px 0;
+    color: #333;
+}
+
+nav {
+    position: fixed;
+    top: 70vh;
+}
+
+ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin: 20px;
+    color: white;
+    z-index: 100;
+    text-transform: uppercase;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+}
+
+nav ul li+li {
+    margin-left: 30px;
+}
+
+nav ul li+li+li {
+    margin-left: 50px;
+}
+
+nav ul li i {
+    margin: 5px;
+}
+
+.menu-context {
+    position: fixed;
+    left: -100px;
+    top: -100px;
+}
+
+.circle {
+    background-color: #ff7979;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+.circle button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    font-size: 26px;
+    color: #fff;
+}
+
+.circle button#close {
+    top: 60%;
+    transform: rotate( 90deg);
+    transform-origin: top left;
+}
+
+.circle button#open {
+    left: 60%;
+}
+
+.container {
+    max-width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+    background: white;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+    transition: transform 0.5s ease-in 0.5s;
+}
+
+.container h1 {
+    color: black;
+    font-weight: 600;
+}
+
+.container h4 {
+    font-size: 12px;
+    color: gray;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.container h3 {
+    color: black;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.container.show-nav {
+    transform: rotate( -20deg);
+}
+
+.container.show-nav .circle {
+    transform: rotate( -70deg);
+}
+
+.container.container.show-nav+nav li {
+    transform: translateX(0%);
+}
